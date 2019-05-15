@@ -4,7 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import AppleMusicUi from '../screens/AppleMusicUI';
-import LinksScreen from '../screens/LinksScreen';
+import NasaScreen from '../screens/NasaApi';
 import SettingsScreen from '../screens/SettingsScreen';
 import VisionApiScreen from '../screens/VisionApiScreen';
 
@@ -26,11 +26,11 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const NasaStack = createStackNavigator({
+  Nasa: NasaScreen,
 });
 
-LinksStack.navigationOptions = {
+NasaStack.navigationOptions = {
   tabBarLabel: 'NASA Api',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -70,7 +70,7 @@ VisionApiStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  NasaStack,
   SettingsStack,
   VisionApiStack,
 });

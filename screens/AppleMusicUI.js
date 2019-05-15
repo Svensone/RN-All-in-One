@@ -17,6 +17,7 @@ const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
 export default class AppleMusicUI extends React.Component {
+
   state = {
     isScrollEnabled: false
   };
