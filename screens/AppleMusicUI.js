@@ -97,6 +97,14 @@ export default class AppleMusicUI extends React.Component {
       outputRange: [1, 0, 1],
       extrapolate: "clamp"
     });
+
+    animateBorderRadiusImage = this.animation.y.interpolate({
+      inputRange: [0, HEIGHT - 90],
+      outputRange: [5, 0],
+      extrapolate: "clamp",
+    });
+
+
     return (
       <ImageBackground source={require('../assets/background.jpg')} style={{ width: "100%", height: "100%"}} >
       
@@ -139,11 +147,12 @@ export default class AppleMusicUI extends React.Component {
                     height: animatedImageHeight,
                     width: animatedImageHeight,
                     marginLeft: animatedImageMarginLeft
+                    
                   }}
                 >
                   <Image
-                    source={require("../assets/pic1.jpg")}
-                    style={{ flex: 1, width: null, height: null }}
+                    source={require("../assets/pic2.jpg")}
+                    style={{ flex: 1, width: null, height: null}}
                   />
                 </Animated.View>
                 <Animated.Text

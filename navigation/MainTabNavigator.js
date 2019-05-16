@@ -5,8 +5,9 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import AppleMusicUi from '../screens/AppleMusicUI';
 import NasaScreen from '../screens/NasaApi';
-import SettingsScreen from '../screens/SettingsScreen';
+import WeatherScreen from '../screens/WeatherScreen';
 import VisionApiScreen from '../screens/VisionApiScreen';
+import TinderUIScreen from '../screens/TinderUIScreen';
 
 const HomeStack = createStackNavigator({
   Home: AppleMusicUi,
@@ -40,11 +41,11 @@ NasaStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const WeatherStack = createStackNavigator({
+  Weather: WeatherScreen,
 });
 
-SettingsStack.navigationOptions = {
+WeatherStack.navigationOptions = {
   tabBarLabel: 'Weather App',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -68,9 +69,26 @@ VisionApiStack.navigationOptions = {
   )
 };
 
+
+
+const TinderUIStack = createStackNavigator({
+  TinderUI: TinderUIScreen,
+});
+
+TinderUIStack.navigationOptions = {
+  tabBarLabel: "Tinder UI",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  )
+}
+
 export default createBottomTabNavigator({
   HomeStack,
   NasaStack,
-  SettingsStack,
+  WeatherStack,
   VisionApiStack,
+  TinderUIStack,
 });
