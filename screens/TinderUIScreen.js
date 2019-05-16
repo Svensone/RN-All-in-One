@@ -23,6 +23,10 @@ const HEIGHT = Dimensions.get("window").height;
 const WIDTH = Dimensions.get("window").width;
 
 export default class TinderUIScreen extends React.Component {
+
+  static navigationOptions = {
+    title: "TinderUI"
+  }
   constructor() {
     super();
 
@@ -113,7 +117,7 @@ export default class TinderUIScreen extends React.Component {
             key={item.id}
             style={[
               this.rotateAndTranslate,
-              { height: HEIGHT - 120, width: WIDTH, padding: 10, position: "absolute" }
+              { height: HEIGHT - 150, width: WIDTH, padding: 10, position: "absolute" }
             ]}
           >
           <Animated.View  style={{opacity: this.likeOpacity, transform: [{rotate: "-30deg"}],  position: "absolute", top: 50, left: 40, zIndex: 1000}}>
@@ -167,11 +171,11 @@ export default class TinderUIScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ height: 60 }} />
+        <View style={{ height: 10 }} />
 
         <View style={{ flex: 1 }}>{this.renderUsers()}</View>
 
-        <View style={{ height: 60 }} />
+        <View style={{ height: 10 }} />
       </View>
     );
   }

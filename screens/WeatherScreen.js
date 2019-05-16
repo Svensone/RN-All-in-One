@@ -43,6 +43,7 @@ export default class WeatherScreen extends React.Component {
         temperatur: json.main.temp,
         isLoading: false,
       })
+      console.log(json)
     })
   }
 
