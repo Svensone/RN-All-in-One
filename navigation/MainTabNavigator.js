@@ -2,6 +2,9 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
+
+import { Feather } from '@expo/vector-icons';
+
 import TabBarIcon from '../components/TabBarIcon';
 import AppleMusicUi from '../screens/AppleMusicUI';
 import NasaScreen from '../screens/NasaApi';
@@ -9,20 +12,18 @@ import WeatherScreen from '../screens/WeatherScreen';
 import VisionApiScreen from '../screens/VisionApiScreen';
 import TinderUIScreen from '../screens/TinderUIScreen';
 
-const HomeStack = createStackNavigator({
+
+
+const AppleMusicStack = createStackNavigator({
   Home: AppleMusicUi,
 });
 
-HomeStack.navigationOptions = {
+AppleMusicStack.navigationOptions = {
   tabBarLabel: 'Apple Music UI',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+      name={'music'}
     />
   ),
 };
@@ -36,7 +37,7 @@ NasaStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={'space-shuttle'}
     />
   ),
 };
@@ -50,7 +51,7 @@ WeatherStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={'thermometer'}
     />
   ),
 };
@@ -64,7 +65,7 @@ VisionApiStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={'camera'}
       />
   )
 };
@@ -80,13 +81,13 @@ TinderUIStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={'heart'}
     />
   )
 }
 
 export default createBottomTabNavigator({
-  HomeStack,
+  AppleMusicStack,
   NasaStack,
   WeatherStack,
   VisionApiStack,
